@@ -53,3 +53,38 @@ function getCity(event) {
 document
   .querySelector("select[name=uf]")
   .addEventListener("change", getCity);
+
+
+const itemsToCollect = document.querySelectorAll(".items-grid li");
+
+for (const item of itemsToCollect) {
+  item.addEventListener("click", handleSelectedItem);
+}
+
+const collectedItems = document.querySelector("input[name=items]");
+
+let selectedItems = [];
+
+function handleSelectedItem(event) {
+  const itemLi = event.target;
+
+  itemLi.classList.toggle("selected"); 
+
+  const itemId = itemLi.dataset.id;
+  
+  const alreadySelected = selectedItems.findIndex( item => {
+    return item == itemId;
+  });
+
+  if (alreadySelected >= 0) {
+    const filteredItems = selectedItems.filter( item => {
+      return item != itemId;
+    });
+    
+    selectedItems = filteredItems;
+  } else {
+    selectedItems.push(itemId);
+  }
+
+  collectedItems.value = selectedItems;
+}
