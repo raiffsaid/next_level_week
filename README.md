@@ -14,4 +14,4 @@ Ecoleta é um projeto construído durante a Next Level Week da Rockketseat que c
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 
 ## Licença
-[MIT](https://choosealicense.com/licenses/mit/)
+- [MIT](https://choosealicense.com/licenses/mit/)
